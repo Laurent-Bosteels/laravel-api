@@ -42,6 +42,7 @@ class WineController extends Controller
         $wine->country = request('country');
         $wine->type = request('type');
         $wine->price = request('price');
+        $wine->optional = request('optional');
 
         // taking the object/instance of the wine and saving it to the database using the save() method
         $wine->save();
@@ -49,6 +50,12 @@ class WineController extends Controller
         // take the data and return a message(=key) and a value (= thank you... ) using the with() method
         // = session data (you can output this in the view using the session function!)
         return redirect('/')->with('message', 'Thank you for your order');
+        }
+
+        public function destroy($id){
+        $wine = Wine::findorFail($id);
+        $wine -> delete();
+        return redirect('/wines');
 
         }
 

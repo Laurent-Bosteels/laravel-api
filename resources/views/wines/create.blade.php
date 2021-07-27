@@ -19,6 +19,15 @@
         </select>
         <label for="price">Wine price:</label>
         <input type="text" id="price" name="price">
+        <fieldset>
+            <label>Optional:</label>
+{{-- Put brackets in the name field in order to tell laravel we want to store the data in an array--}}            
+            <input type="checkbox" name="optional[]" value="cheese">Cheese platter<br />
+            <input type="checkbox" name="optional[]" value="olives">Olives<br />
+            <input type="checkbox" name="optional[]" value="grill">Grilled veggies<br />
+            <input type="checkbox" name="optional[]" value="ham">Fine selection of ham<br />
+            <input type="checkbox" name="optional[]" value="mix">Mixed plate<br />
+        </fieldset>
         <input type="submit" value="Create Wine">
     </form>
 

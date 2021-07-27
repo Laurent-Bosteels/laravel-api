@@ -26,3 +26,5 @@ Route::get('/wines', [WineController::class, 'index']);
 Route::get('/wines/create', [WineController::class, 'create']);
 Route::post('/wines', [WineController::class, 'store']);
 Route::get('/wines/{id}', [WineController::class, 'show']);
+Route::delete('/wines/{id}', [WineController::class, 'destroy']);
+
