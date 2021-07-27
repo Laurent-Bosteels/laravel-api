@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\WineController;
+use Illuminate\Support\Facades\Auth;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -28,3 +30,6 @@ Route::post('/wines', [WineController::class, 'store']);
 Route::get('/wines/{id}', [WineController::class, 'show']);
 Route::delete('/wines/{id}', [WineController::class, 'destroy']);
 
+
+Auth::routes();
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
