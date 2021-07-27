@@ -15,7 +15,7 @@
                     <li>{{ $option }}</li>
                     @endforeach
                 </ul>
-                <form action="/wines/{{$wine->id}}" method="POST">
+                <form action="{{route('wines.destroy', $wine->id)}}" method="POST">
                 @csrf
                 @method('DELETE')
                 <button>Complete Order</button>

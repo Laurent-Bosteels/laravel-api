@@ -6,6 +6,7 @@
             
             <div class="content">
                     <p class="message">{{session('message')}}</p>
+                    <a href="{{ route('wines.create') }}">Order a wine</a>
             </div>
         </div>
 @endsection
