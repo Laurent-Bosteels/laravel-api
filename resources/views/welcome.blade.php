@@ -5,7 +5,7 @@
 <div class="flex-center position-ref full-height">
             
             <div class="content">
-                    <p>Hello, World</p>
+                    <p class="message">{{session('message')}}</p>
             </div>
         </div>
 @endsection

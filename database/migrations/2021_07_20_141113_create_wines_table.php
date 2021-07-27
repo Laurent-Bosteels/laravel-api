@@ -20,6 +20,7 @@ class CreateWinesTable extends Migration
             $table->string('country');
             $table->string('name');
             $table->integer('price');
+            $table->json('optional');
         });
     }
 

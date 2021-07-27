@@ -34,15 +34,21 @@ class WineController extends Controller
         }
 
     public function store() {
-
-        // actually checking if the post picks up the data and shows it in the IDE terminal
-        error_log(request('name'));
-        error_log(request('type'));
-        error_log(request('country'));
-        error_log(request('price'));
+        // creating a new object/instance of the wine model and storing it in the wine variable
+        $wine = new Wine();
         
-        // take the data and return to the homescreen
-        return redirect('/');
+        // request is used to acces the data
+        $wine->name = request('name');
+        $wine->country = request('country');
+        $wine->type = request('type');
+        $wine->price = request('price');
+
+        // taking the object/instance of the wine and saving it to the database using the save() method
+        $wine->save();
+
+        // take the data and return a message(=key) and a value (= thank you... ) using the with() method
+        // = session data (you can output this in the view using the session function!)
+        return redirect('/')->with('message', 'Thank you for your order');
 
         }
 
